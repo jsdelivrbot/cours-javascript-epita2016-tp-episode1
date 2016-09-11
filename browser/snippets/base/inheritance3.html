@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="../../common/assets/favicons/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>...</title>
+
+  <script src="../../../jspm_packages/system.js"></script>
+  <script src="../../../config.js"></script>
+  <script>
+    window.define = System.amdDefine;
+    window.require = window.requirejs = System.amdRequire;
+  </script>
+</head>
+
+<div class="container">
+  <h1>Snippets</h1>
+</div>
+
+
+
+<script>
+  'use strict';
+
+  function say(named, text) {
+    console.log(named.name + ': ' + text);
+  }
+
+  const Alice = {name: 'Alice'};
+  const Bob = {name: 'Bob'};
+
+  say(Alice, 'I want to tell you a secret');
+  say(Bob, 'OK but please cipher');
+
+</script>

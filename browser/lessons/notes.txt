@@ -1,0 +1,39 @@
+
+
+
+define(function() {
+  'use strict';
+
+  context('[example] es5 test', function () {
+
+    describe('A good javascript developer mastering javascript unit tests', function () {
+
+      it('should be able to use mocha and chai in ES5', function () {
+        expect(53).to.be.a('Number');
+      });
+    });
+  });
+});
+
+
+/*
+ var targetUrls = _([req.query.targetUrl])
+ .flatten()
+ .map(function(url) {
+ try {
+ return getTargetUrl(decodeURIComponent(url));
+ } catch (err) {
+ logger.warn('Invalid request: URI malformed', {
+ category: 'blog-posts',
+ error: err,
+ requestUrl: req.url,
+ 'query.targetUrl': url
+ });
+ }
+ })
+ .compact()
+ .value();
+ */
+
+
+https://gist.github.com/kimmobrunfeldt/ca53975d4ae9a7851fa9

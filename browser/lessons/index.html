@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript class 2016</title>
+  <link rel="shortcut icon" href="../common/assets/favicons/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="../../../jspm_packages/system.js"></script>
+  <script src="../../../config.js"></script>
+  <script>
+    window.define = System.amdDefine;
+    window.require = window.requirejs = System.amdRequire;
+    System.import('mocha')
+    .then(function() {
+      System.import('./lesson_tests_bootstrap.js');
+    });
+  </script>
+</head>
+
+<body>
+  <div id="mocha"></div>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="shortcut icon" href="../../common/assets/favicons/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+
+  </style>
+
+
+  <script src="../../../jspm_packages/system.js"></script>
+  <script src="../../../config.js"></script>
+  <script>
+    window.define = System.amdDefine;
+    window.require = window.requirejs = System.amdRequire;
+    require([
+      'lodash',
+      'jquery',
+      'bootstrap',
+      'bootstrap/css/bootstrap.css!'
+    ],
+    function(_, $) {
+      console.log('hello, Javascript world !', _.VERSION);
+      document.title = 'Demo - ' + $('h1').text();
+    });
+  </script>
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>Hello world ES5</h1>
+    <p>Welcome to Javascript !</p>
+    <img class="img-responsive" src="../../common/assets/images/welcome-to-the-internet.jpg">
+  </div>
+
+  <noscript>
+    For full functionality of this site it is necessary to enable JavaScript.
+    Here are the <a href="http://www.enable-javascript.com/" target="_blank">
+    instructions how to enable JavaScript in your web browser</a>.
+  </noscript>
+</body>
+</html>

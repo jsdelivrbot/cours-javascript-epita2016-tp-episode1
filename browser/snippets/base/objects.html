@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Snippet : functions</title>
+
+  <script src="../../../bower_components/requirejs/require.js"></script>
+  <script>
+    require([ '../../common/requirejs-config' ], function() {
+      // adapt config for this file
+      requirejs.config({baseUrl: '../../..'});
+      // Configuration loaded now, safe to do other require calls that depend on that config.
+      require([
+        'lodash',
+        'jquery',
+        'bootstrap'
+      ],
+      function(_, $) {
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        'use strict';
+
+        let duck = {
+          name: 'Bob',
+          weight: 1.5,
+          actions: {
+            eat: function() { duck.weight += 0.1 },
+            'search-food': function() { duck.weight -= 0.1 },
+          }
+        };
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>Hello world.</h1>
+  </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="../../common/assets/favicons/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>...</title>
+
+  <script src="../../../jspm_packages/system.js"></script>
+  <script src="../../../config.js"></script>
+  <script>
+    window.define = System.amdDefine;
+    window.require = window.requirejs = System.amdRequire;
+  </script>
+</head>
+
+<div class="container">
+  <h1>Snippets</h1>
+</div>
+
+
+
+<script>
+  'use strict';
+
+  console.log('line 1');
+  setTimeout(function() {
+    console.log.bind(console, 'line 2'),
+  }, 1000);
+  console.log('line 3');
+
+
+</script>

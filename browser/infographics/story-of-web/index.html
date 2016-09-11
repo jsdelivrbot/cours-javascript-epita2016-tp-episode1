@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<!-- html_004 template -->
+
+<html lang='en'>
+<head>
+  <meta charset="utf-8">
+  <title>History of web technologies</title>
+  <link rel="shortcut icon" href="../../common/assets/favicons/favicon.ico">
+
+  <script src="../../../jspm_packages/system.js"></script>
+  <script src="../../../config.js"></script>
+  <script>
+    window.define = System.amdDefine;
+    window.require = window.requirejs = System.amdRequire;
+  </script>
+</head>
+<body>
+
+<div id="content">
+  <div class="container">
+    <h1 id="header">History of web technologies</h1>
+
+    <div class="timeline" id="timeline"></div>
+  </div>
+  <!-- /container -->
+</div>
+<!-- /content -->
+
+<script>
+  require(['d3kit-timeline', 'bootstrap', 'bootstrap/css/bootstrap.css!'],
+    function (d3Kit) {
+      var data = [
+        {
+          time: new Date(1995, 7, 0), category: 'milestone',
+          title: 'First browser war',
+          references: 'https://en.wikipedia.org/wiki/Browser_wars#First_browser_war'
+        },
+        {
+          time: new Date(1996, 1, 1), category: 'legacy',
+          title: 'ActiveX',
+          references: 'https://blogs.windows.com/msedgedev/2015/05/06/a-break-from-the-past-part-2-saying-goodbye-to-activex-vbscript-attachevent/'
+        },
+        {
+          time: new Date(1996, 12, 1), category: 'legacy',
+          title: 'Flash 1.0 (Macromedia)',
+          references: 'https://fr.wikipedia.org/wiki/Adobe_Flash'
+        },
+        {
+          time: new Date(1997, 1, 1), category: 'legacy',
+          title: 'Browser Helper Objects (BHO)',
+          references: 'https://blogs.windows.com/msedgedev/2015/05/06/a-break-from-the-past-part-2-saying-goodbye-to-activex-vbscript-attachevent/'
+        },
+        {
+          time: new Date(2000, 3, 10), category: 'milestone',
+          title: 'Dot-com bubble highest',
+          references: 'https://en.wikipedia.org/wiki/Dot-com_bubble'
+        },
+        {
+          time: new Date(2004, 3, 1), category: 'legacy',
+          title: 'Adobe Flex 1.0',
+          references: 'https://fr.wikipedia.org/wiki/Adobe_Flex'
+        },
+        {
+          time: new Date(2004, 04, 01), category: 'milestone',
+          title: 'Gmail announced (full AJAX, 1Gb storage, easy search)',
+          references: 'https://en.wikipedia.org/wiki/History_of_Gmail'
+        },
+        {
+          time: new Date(2005, 1, 1), category: 'web',
+          title: 'Second browser war',
+          references: 'https://en.wikipedia.org/wiki/Browser_wars#First_browser_war'
+        },
+        {
+          time: new Date(2005, 02, 08), category: 'milestone',
+          title: 'Google Maps announced',
+          references: [
+            'https://googleblog.blogspot.fr/2005/02/mapping-your-way.html',
+            'https://en.wikipedia.org/wiki/Google_Maps#History'
+          ]
+        },
+        {
+          time: new Date(2006, 5, 17), category: 'legacy',
+          title: 'Google Web Toolkit (GWT) 1.0',
+          references: 'https://fr.wikipedia.org/wiki/Google_Web_Toolkit'
+        },
+        {
+          time: new Date(2007, 06, 29), category: 'milestone',
+          title: 'Release of the Apple iPhone',
+          references: 'https://en.wikipedia.org/wiki/IPhone'
+        },
+        {
+          time: new Date(2008, 07, 10), category: 'milestone',
+          title: 'Opening of the Apple App Store',
+          references: 'https://en.wikipedia.org/wiki/App_Store_%28iOS%29'
+        },
+        {
+          time: new Date(2008, 12, 11), category: 'milestone',
+          title: 'Release of the Google Chrome browser',
+          references: 'https://en.wikipedia.org/wiki/Google_Chrome'
+        },
+        {
+          time: new Date(2010, 4, 29), category: 'milestone',
+          title: 'Steve Jobs "Thoughts on Flash"',
+          references: [
+            'http://www.apple.com/hotnews/thoughts-on-flash/',
+            'https://en.wikipedia.org/wiki/Apple_and_Adobe_Flash_controversy'
+          ]
+        },
+        {
+          time: new Date(2015, 11, 11), category: 'milestone',
+          title: 'FlipKart (India’s big online shop) launches a progressive web app',
+          references: [
+            'https://medium.com/@AdityaPunjani/building-flipkart-lite-a-progressive-web-app-2c211e641883',
+            'http://gonehybrid.com/are-progressive-web-apps-the-future-of-mobile-apps/'
+          ]
+        },
+        {
+          time: new Date(2013, 5, 29), category: 'js',
+          title: 'ReactJS open sourced (facebook)',
+          references: 'https://en.wikipedia.org/wiki/Google_Chrome'
+        },
+        {
+          time: new Date(2015, 10, 14), category: 'milestone',
+          title: 'Google "Deprecating our AJAX crawling scheme"',
+          references: 'https://googlewebmastercentral.blogspot.fr/2015/10/deprecating-our-ajax-crawling-scheme.html'
+        },
+
+
+
+        /////////////// TOSORT TOSOURCE
+        {
+          time: new Date(1990, 1, 1), category: 'web',
+          title: 'Early web'
+        },
+        {
+          time: new Date(1995, 1, 1), category: 'js',
+          title: 'Javascript (Netscape)'
+        },
+        {
+          time: new Date(1995, 1, 1), category: 'web',
+          title: 'Apache HTTP Server'
+        },
+        {
+          time: new Date(1996, 1, 1), category: 'web',
+          title: 'PHP'
+        },
+        {
+          time: new Date(1999, 1, 1), category: 'js',
+          title: 'Ajax (Microsoft)'
+        },
+        {
+          time: new Date(2001, 1, 1), category: 'js',
+          title: 'JSON'
+        },
+        {
+          time: new Date(2004, 1, 1), category: 'web',
+          title: 'nginx'
+        },
+        {
+          time: new Date(2005, 1, 1), category: 'web',
+          title: 'Ruby On Rails'
+        },
+        {
+          time: new Date(2006, 1, 1), category: 'js',
+          title: 'jQuery'
+        },
+        {
+          time: new Date(2008, 1, 1), category: 'web',
+          title: 'Google Chrome + v8'
+        },
+        {
+          time: new Date(2009, 1, 1), category: 'js',
+          title: 'AngularJS (Google)'
+        },
+        {
+          time: new Date(2009, 1, 1), category: 'js',
+          title: 'node.js'
+        },
+        {
+          time: new Date(2009, 10, 28), category: 'js',
+          title: 'Underscore'
+        },
+        {
+          time: new Date(2012, 5, 25), category: 'js',
+          title: 'Lodash'
+        },
+      ];
+
+      var colors = {
+        web: {
+          fg: 'black',
+          bg: 'white',
+          link: 'black',
+        },
+        js: {
+          fg: 'black',
+          bg: 'yellow',
+          link: 'rgb(237, 230, 0)',
+        },
+        legacy: {
+          fg: 'gray',
+          bg: 'white',
+          link: 'gray',
+        },
+        milestone: {
+          fg: 'white',
+          bg: 'orange',
+          link: 'orange',
+        }
+      };
+
+      function getColor(selector, item) {
+        var defaultColorSpec = {
+          fg: 'white',
+          bg: 'red',
+          link: 'red',
+        };
+        return (colors[item.category] || defaultColorSpec)[selector] || 'red';
+      }
+
+
+
+      // https://github.com/kristw/d3kit-timeline/blob/master/docs/api.md
+      var chart = new d3Kit.Timeline('#timeline', {
+        direction: 'right',
+        initialWidth: 800,
+        initialHeight: 800,
+        textFn: function (d) {
+          return d.time.getFullYear() + ' - ' + d.title;
+        },
+        dotColor: getColor.bind(null, 'bg'),
+        labelBgColor: getColor.bind(null, 'bg'),
+        labelTextColor: getColor.bind(null, 'fg'),
+        linkColor: getColor.bind(null, 'link'),
+        dotRadius: function() { return 4; }
+        // labelPadding
+      });
+
+      chart.data(data);
+    });
+</script>
+
+</body>
+</html>

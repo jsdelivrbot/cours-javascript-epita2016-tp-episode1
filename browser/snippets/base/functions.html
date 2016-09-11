@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Snippet : functions</title>
+
+  <script src="../../../bower_components/requirejs/require.js"></script>
+  <script>
+    require([ '../../common/requirejs-config' ], function() {
+      // adapt config for this file
+      requirejs.config({baseUrl: '../../..'});
+      // Configuration loaded now, safe to do other require calls that depend on that config.
+      require([
+        'lodash',
+        'jquery',
+        'bootstrap'
+      ],
+      function(_, $) {
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        'use strict';
+
+        function hello(name) {
+            console.log('hello, ' + name + '!');
+        }
+        hello('John');
+
+        var greet = hello;
+        greet('John');
+
+        function greetMultiple(names, greetFn) {
+          names.forEach(greetFn);
+        }
+        greetMultiple([ 'Steve', 'Tony', 'Natasha' ], hello);
+        greetMultiple([ 'Steve', 'Tony', 'Natasha' ], function (name) {
+          console.log('Hi ' + name + '!');
+        });
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>Hello world.</h1>
+  </div>
+</body>
+</html>

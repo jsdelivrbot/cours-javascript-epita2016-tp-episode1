@@ -1,0 +1,19 @@
+language: node_js
+sudo: false
+
+# https://docs.travis-ci.com/user/gui-and-headless-browsers/
+# https://karma-runner.github.io/0.8/plus/Travis-CI.html
+
+env:
+  global:
+  - secure: "decN+cj/TB2dghtDBGLiNLmiesWTeAvH9IPx06zC3FKdu3gYZ5cl7Pp/kvKZ9a7Z1AzOAul7b5drbPMyccKQ9hr62tgbXtqu4dvu71z/xkbrMM6XjUlKcph1wxG3e2jsRS2SqhCAULVmBceKU70p/TwFYrkOj8EunUW8T+nbDIsAYJRZgsNmqtM81lROS2Uzpui3xwvT86jsgrdgSCwZroNnGg6QnOIZdDipsoGLR0WnX/M+fBhuoACmSQ7xyuvTZ4vyhkdkBzsUwcAeTGf6LfSiLZeyZo1jrSlG3Jn5T1TQcEpWO+U9s6nvgiA3FRokqpADVRMqWsaHyXcgOaB7Unn5K09lKyEISJQ6ZFtOyefDCrHC0YbCpZ+96eNIWZGTDj51y4iR4Q+pIi23p5ZuZo8siLRjx5Ut9sBOwJKm3lYPcnK45JApQq/GI5gDM0rndTW1l/veZw/uN+8Tbb4qUpQHXgelHTi0HjCs6kgioBDY7dkgwD00v4g74iTAuLjrgv1QKYQaRXO2xzt63l4bdYMh03j73W5pHQT5L9IDAIupg9OWrW6w3Nl33YDR/KeUSuY+fAnD08kuZJdhPhGBaYsrrLxX2SJOKrnIvxv+Fe01VqwGF2w9pXi7LrS67kSWnB3Qd/att1DgLTLTrb7VFfQytC6Vlh7RUBHXMu5DRro="
+
+#before_install:
+#- npm install -g jspm
+#- jspm config registries.github.auth $JSPM_GITHUB_AUTH_TOKEN
+before_script:
+- export CHROME_BIN=chromium-browser
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sleep 2 # give xvfb some time to start
+#- npm run jspm-install

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="../../common/assets/favicons/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>...</title>
+
+  <script src="../../../jspm_packages/system.js"></script>
+  <script src="../../../config.js"></script>
+  <script>
+    System.import('./index.js');
+  </script>
+</head>
+
+<div class="container">
+  <h1>Fetch API</h1>
+  <li><a>https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch</a></li>
+  <li><a>https://github.com/github/fetch</a></li>
+  <p>Fetching from <a>http://www.icndb.com/api/</a></p>
+
+  <p class="text-center">
+    <img src="http://www.wnd.com/files/2012/08/120803chucknorrisz.jpg" alt="..." class="img-circle" />
+  </p>
+</div>
+
+<script>
+  // auto-set page titles
+  document.title = document.querySelector('h1').textContent = 'Demo - ' + document.querySelector('h1').textContent;
+  // ease creation of links
+  Array.prototype.forEach.call(document.querySelectorAll('a'), function(el) {
+    el.href || (el.href = el.text);
+  });
+</script>
+
+<noscript>
+  For full functionality of this site it is necessary to enable JavaScript.
+  Here are the <a href="http://www.enable-javascript.com/" target="_blank">
+  instructions how to enable JavaScript in your web browser</a>.
+</noscript>
